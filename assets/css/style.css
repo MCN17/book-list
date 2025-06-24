@@ -28,7 +28,7 @@ h1 {
 ul {
     background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
     color: #FFFFFF;
-    padding: 1em;
+    padding: 0.5rem;
     border-radius: 8px;
     font-size: 2rem;
     list-style: none;
