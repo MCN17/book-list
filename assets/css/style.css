@@ -1,0 +1,37 @@
+body {
+    background-image: url(../images/librarypic.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 10%;
+    justify-items: center;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+input {
+    border: 1px solid;
+    border-radius: 0.5rem;
+    padding: 7px 20px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+ul {
+    background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+    color: #FFFFFF;
+    padding: 1em;
+    border-radius: 8px;
+    font-size: 2rem;
+    list-style: none;
+    justify-items: center;
+}
+
