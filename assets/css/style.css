@@ -2,7 +2,7 @@ body {
     background-image: url(../images/librarypic.jpg);
     background-size: cover;
     background-attachment: fixed;
-    background-position: 10%;
+    background-position: 0% 60%;
     justify-items: center;
     color: #FFFFFF;
     font-weight: bold;
