@@ -2,6 +2,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('addButton').addEventListener('click', addItem);
     loadItems();
   });
+
+    const input = document.getElementById("itemInput");
+    const button = document.getElementById("addButton");
+
+
+    // User can hit enter instead of having to click on addButton everytime
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        button.click();
+      }
+    });
   
   function addItem() {
     const input = document.getElementById('itemInput');

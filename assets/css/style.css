@@ -35,3 +35,28 @@ ul {
     justify-items: center;
 }
 
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+
+@media screen and (max-width: 575px) {
+
+    body {
+        background-size:cover;
+        background-position: 45%;
+    }
+
+    h1 {
+        margin: 5rem 0rem 1rem;
+        padding: none;
+    }
+
+    ul {
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul li {
+        text-align: center;
+    }
+}
