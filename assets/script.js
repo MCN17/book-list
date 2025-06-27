@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
     const input = document.getElementById("itemInput");
+    const ratingInput = document.getElementById("ratingInput");
     const button = document.getElementById("addButton");
 
 
@@ -15,33 +16,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
   function addItem() {
-    const input = document.getElementById('itemInput');
-    const newItem = input.value.trim();
+    const itemValue = input.value.trim();
+    const ratingValue = ratingInput.value;
   
-    if (newItem === '') return;
+    if (itemValue === '') return;
+
+    const stars = '⭐'.repeat(ratingValue);
   
     // Add to DOM
     const li = document.createElement('li');
-    li.textContent = newItem;
+    li.textContent = `${itemValue}  ${stars}`;
     document.getElementById('itemList').appendChild(li);
   
     // Save to localStorage
-    saveToLocalStorage(newItem);
+     saveToLocalStorage(itemValue, ratingValue);
   
     input.value = '';
   }
   
-  function saveToLocalStorage(item) {
+  function saveToLocalStorage(item, rating) {
     let items = JSON.parse(localStorage.getItem('myItems')) || [];
-    items.push(item);
+    items.push({ name: item, rating: rating })
     localStorage.setItem('myItems', JSON.stringify(items));
   }
   
-  function loadItems() {
-    const items = JSON.parse(localStorage.getItem('myItems')) || [];
-    items.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = item;
-      document.getElementById('itemList').appendChild(li);
-    });
+ function loadItems() {
+  const items = JSON.parse(localStorage.getItem('myItems')) || [];
+  items.forEach(function(entry) {
+    const stars = '⭐'.repeat(entry.rating);
+    const li = document.createElement('li');
+    li.textContent = `${entry.name}  ${stars}`;
+    document.getElementById('itemList').appendChild(li);
+  });
   }
